@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModels="clr-namespace:Maggi.ViewModels"
+             x:Class="Maggi.Pages.OpeningPage">
+
+            <ContentPage.BindingContext>
+                <ViewModels:OpeningViewModel />
+            </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Image HorizontalOptions="Center" WidthRequest="300" Margin="0,-20,0,-20" Source="maco.jpg"/>
+
+            <Label Text="Who Are You?" HorizontalOptions="Center" FontSize="Large"/>
+
+            <StackLayout>
+
+                <Button x:Name="ArtistButton" 
+                        WidthRequest="176" 
+                        HeightRequest="176" 
+                        BorderRadius="88"
+                        Text="Artist" 
+                        TextColor="White"  
+                        FontAttributes="Bold" 
+                        FontSize="Large" 
+                        VerticalOptions  ="Center"
+                        HorizontalOptions="Center" 
+                        BackgroundColor="#088da5" 
+                        Margin="20,20,20,10"/>
+
+                <Button x:Name="EnthuButton" 
+                        WidthRequest="176" 
+                        HeightRequest="176" 
+                        BorderRadius="88"
+                        Text="Enthusiast" 
+                        TextColor="White"  
+                        FontAttributes="Bold" 
+                        FontSize="Large" 
+                        VerticalOptions  ="Center"
+                        HorizontalOptions="Center"  
+                        BackgroundColor="#088da5" 
+                        Margin="20,0,20,10"/>
+
+            </StackLayout>
+
+            <Button x:Name="LoginButton" 
+                    Clicked="LoginClicked"
+                    Text="Already have an account? Log in here." 
+                    TextColor="White"   
+                    FontSize="Small" 
+                    HorizontalOptions="Center"  
+                    BackgroundColor="#088da5" 
+                    Margin="20,10,20,10"/>
+
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Span1" />
+                        <Span Text="Span2 (Tap me)" TextColor="Blue">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapCommand}" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                        <Span Text="Span3"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+    
+</ContentPage>
